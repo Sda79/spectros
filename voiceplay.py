@@ -22,7 +22,7 @@ stream=p.open(format=pyaudio.paInt16,
 # init graph
 line, = ax.plot(freq, np.zeros(nfft))
 ax.set_ylim(-10, 10**5)
-ax.set_xlim(0, 0.5*RATE)
+ax.set_xlim(0, RATE/2)
 fig.show()
 
 while True: 
