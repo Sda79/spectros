@@ -1,4 +1,6 @@
 import secrets
+import matplotlib.pyplot as plt
+import numpy as np
 
 version = "0.0.0"
 print("Spectros v" + version);
@@ -21,5 +23,13 @@ def de2bi(n):
 			bits.insert(0, 1)
 	return bits
 	
-print(information(10))
-print(de2bi(127))
+def sinus(min=0, max=2*np.pi, prec=1000):
+	result = []
+	time = np.linspace(min, max, prec)
+	result = np.sin(time)
+	return [time , result] 
+
+vals = sinus(-10*np.pi, 10*np.pi, 10**3)
+plt.plot(vals[0], vals[1])
+plt.show()
+	
